@@ -55,8 +55,8 @@ def save_model(sess, model, path, logger):
     model.saver.save(sess, checkpoint_path)
     logger.info("model saved")
 
-def create_model(session, Moeld_class, path, load_vec, config, id_to_char, logger):
-    model = Moeld_class(config)
+def create_model(session, Model_class, path, load_vec, config, id_to_char, logger):
+    model = Model_class(config)
 
     ckpt = tf.train.get_checkpoint_state(path)
     if ckpt and tf.train.checkpoint_exists(ckpt.model_checkpoint_path):
